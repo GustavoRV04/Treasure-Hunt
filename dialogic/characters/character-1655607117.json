@@ -1,0 +1,21 @@
+{
+	"color": "#ff581d99",
+	"description": "Diana é a pessoa mais respeitada da aldeia",
+	"display_name": "Diana",
+	"display_name_bool": true,
+	"id": "character-1655607117.json",
+	"mirror_portraits": false,
+	"name": "Lider",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": -2000,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": ""
+		}
+	],
+	"scale": 100,
+	"theme": "default-theme.cfg"
+}

@@ -1,0 +1,21 @@
+{
+	"color": "#ff16abc3",
+	"description": "",
+	"display_name": "Herói",
+	"display_name_bool": true,
+	"id": "character-1655652783.json",
+	"mirror_portraits": false,
+	"name": "Herói",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": ""
+		}
+	],
+	"scale": 100,
+	"theme": "default-theme.cfg"
+}

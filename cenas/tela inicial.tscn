@@ -1,0 +1,168 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://recursos/tela inicial.png" type="Texture" id=1]
+[ext_resource path="res://recursos/t.png" type="Texture" id=2]
+[ext_resource path="res://recursos/r.png" type="Texture" id=3]
+[ext_resource path="res://recursos/e.png" type="Texture" id=4]
+[ext_resource path="res://recursos/A.png" type="Texture" id=5]
+[ext_resource path="res://recursos/s.png" type="Texture" id=6]
+[ext_resource path="res://recursos/u.png" type="Texture" id=7]
+[ext_resource path="res://recursos/h.png" type="Texture" id=8]
+[ext_resource path="res://recursos/n.png" type="Texture" id=9]
+[ext_resource path="res://scripts/Inicio.gd" type="Script" id=10]
+[ext_resource path="res://recursos/arco_flecha.png" type="Texture" id=11]
+[ext_resource path="res://recursos/nuvem.png" type="Texture" id=12]
+[ext_resource path="res://recursos/images.png" type="Texture" id=13]
+[ext_resource path="res://recursos/espadaaa.png" type="Texture" id=14]
+[ext_resource path="res://music/534167__meatsackj__short-game-music-loop.wav" type="AudioStream" id=15]
+[ext_resource path="res://cenas/transição.tscn" type="PackedScene" id=16]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 446, 49.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 202, 46.5 )
+
+[node name="tela inicial" type="Node2D"]
+script = ExtResource( 10 )
+
+[node name="background" type="Node2D" parent="."]
+
+[node name="background" type="Sprite" parent="background"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="nome1" type="Node2D" parent="."]
+position = Vector2( 196, -34 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="t" type="Sprite" parent="nome1"]
+position = Vector2( 374, 430 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="r" type="Sprite" parent="nome1"]
+position = Vector2( 491, 430 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="e" type="Sprite" parent="nome1"]
+position = Vector2( 601, 430 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="a" type="Sprite" parent="nome1"]
+position = Vector2( 714, 430 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="s" type="Sprite" parent="nome1"]
+position = Vector2( 820, 430 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="u" type="Sprite" parent="nome1"]
+position = Vector2( 919, 436 )
+scale = Vector2( 0.6, 0.5 )
+texture = ExtResource( 7 )
+
+[node name="r2" type="Sprite" parent="nome1"]
+position = Vector2( 1040, 430 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="e2" type="Sprite" parent="nome1"]
+position = Vector2( 1143, 430 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="nome1"]
+visible = false
+position = Vector2( 762, 429.5 )
+shape = SubResource( 1 )
+
+[node name="nome2" type="Node2D" parent="."]
+position = Vector2( -388, 242 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="h" type="Sprite" parent="nome2"]
+position = Vector2( 1186, 270 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="u" type="Sprite" parent="nome2"]
+position = Vector2( 1276, 278 )
+scale = Vector2( 0.6, 0.5 )
+texture = ExtResource( 7 )
+
+[node name="n" type="Sprite" parent="nome2"]
+position = Vector2( 1381, 270 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 9 )
+
+[node name="t" type="Sprite" parent="nome2"]
+position = Vector2( 1487, 270 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="nome2"]
+visible = false
+position = Vector2( 1341, 271.5 )
+shape = SubResource( 2 )
+
+[node name="enfeites" type="Node2D" parent="."]
+
+[node name="nuvem" type="Sprite" parent="enfeites"]
+position = Vector2( 331, 163 )
+scale = Vector2( 1.79795, 1.48266 )
+texture = ExtResource( 13 )
+
+[node name="nuvem2" type="Sprite" parent="enfeites"]
+position = Vector2( 926.625, 152.375 )
+scale = Vector2( 0.623611, 0.502562 )
+texture = ExtResource( 12 )
+
+[node name="nuvem3" type="Sprite" parent="enfeites"]
+position = Vector2( 1604, 163 )
+scale = Vector2( 1.79795, 1.48266 )
+texture = ExtResource( 13 )
+
+[node name="espada" type="Sprite" parent="enfeites"]
+position = Vector2( 251, 587 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 14 )
+
+[node name="arco" type="Sprite" parent="enfeites"]
+position = Vector2( 1654, 599 )
+rotation = 3.14159
+scale = Vector2( 1.2436, 1.29968 )
+texture = ExtResource( 11 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Button" type="Button" parent="."]
+modulate = Color( 0, 0.411765, 0.113725, 1 )
+light_mask = 512
+margin_left = 734.0
+margin_top = 753.0
+margin_right = 491.0
+margin_bottom = 749.0
+rect_min_size = Vector2( 3, 3 )
+rect_scale = Vector2( 3.32583, 4.0729 )
+rect_clip_content = true
+text = "Press ENTER to start"
+flat = true
+
+[node name="transição" parent="." instance=ExtResource( 16 )]
+
+[node name="musicFx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 15 )
+volume_db = -15.0
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

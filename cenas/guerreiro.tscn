@@ -1,0 +1,227 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://scripts/guerreiro.gd" type="Script" id=1]
+[ext_resource path="res://recursos/Players/ikki.png" type="Texture" id=2]
+[ext_resource path="res://recursos/Players/guerreiroparado.png" type="Texture" id=3]
+[ext_resource path="res://recursos/Players/AA.png" type="Texture" id=4]
+[ext_resource path="res://recursos/Players/BB.png" type="Texture" id=5]
+[ext_resource path="res://recursos/Players/adventurer-attack2-05.png" type="Texture" id=6]
+[ext_resource path="res://recursos/Players/adventurer-jump-03.png" type="Texture" id=7]
+[ext_resource path="res://recursos/Players/DD.png" type="Texture" id=8]
+[ext_resource path="res://recursos/Players/o11.png" type="Texture" id=9]
+[ext_resource path="res://recursos/Players/CC.png" type="Texture" id=10]
+[ext_resource path="res://recursos/Players/khg.png" type="Texture" id=11]
+[ext_resource path="res://recursos/Players/adventurer-walk-00.png" type="Texture" id=12]
+[ext_resource path="res://recursos/Players/kkkkk.png" type="Texture" id=13]
+[ext_resource path="res://recursos/Players/bah.png" type="Texture" id=14]
+[ext_resource path="res://recursos/Players/adventurer-walk-02.png" type="Texture" id=15]
+[ext_resource path="res://recursos/Players/adventurer-walk-01.png" type="Texture" id=16]
+[ext_resource path="res://sons/341695__projectsu012__coins-1.wav" type="AudioStream" id=17]
+[ext_resource path="res://sons/464503__elynch0901__attack-punch.wav" type="AudioStream" id=18]
+[ext_resource path="res://sons/456373__felixyadomi__hop9.wav" type="AudioStream" id=19]
+[ext_resource path="res://sons/270326__littlerobotsoundfactory__hit-01.wav" type="AudioStream" id=20]
+[ext_resource path="res://recursos/1.png" type="Texture" id=21]
+[ext_resource path="res://recursos/2.png" type="Texture" id=22]
+[ext_resource path="res://recursos/3.png" type="Texture" id=23]
+[ext_resource path="res://recursos/4.png" type="Texture" id=24]
+[ext_resource path="res://recursos/5.png" type="Texture" id=25]
+[ext_resource path="res://recursos/0.png" type="Texture" id=26]
+[ext_resource path="res://recursos/Players/jjj.png" type="Texture" id=27]
+[ext_resource path="res://recursos/Players/iujsiws.png" type="Texture" id=28]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "hit",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 16 ), ExtResource( 15 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "mov_d",
+"speed": 5.0
+}, {
+"frames": [ null, null, null ],
+"loop": true,
+"name": "morte",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 2 ), ExtResource( 28 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "ataque",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 27 ), ExtResource( 7 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 55.1667
+height = 105.556
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 29.3999
+height = 14.2992
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 18.75
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 21 ) ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ) ],
+"loop": true,
+"name": "2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ) ],
+"loop": true,
+"name": "0",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ) ],
+"loop": true,
+"name": "5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "4",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ null, null, null, null ],
+"loop": false,
+"name": "morto",
+"speed": 5.0
+} ]
+
+[node name="guerreiro" type="KinematicBody2D"]
+position = Vector2( 120, 565 )
+scale = Vector2( 0.8, 0.8 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.9, 0.9 )
+frames = SubResource( 3 )
+animation = "idle"
+speed_scale = 1.5
+playing = true
+
+[node name="Area2D" type="Area2D" parent="Sprite"]
+position = Vector2( -11.1111, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
+position = Vector2( 15.2778, 25.0001 )
+shape = SubResource( 4 )
+
+[node name="espada" type="Area2D" parent="Sprite"]
+position = Vector2( 100, 15.2778 )
+monitoring = false
+monitorable = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/espada"]
+position = Vector2( 0, -1.38892 )
+rotation = 1.49924
+shape = SubResource( 6 )
+
+[node name="espada2" type="Area2D" parent="Sprite"]
+position = Vector2( -93.0556, 15.2778 )
+monitoring = false
+monitorable = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/espada2"]
+position = Vector2( 0, -1.38892 )
+rotation = 1.49924
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 27.5, -38.75 )
+shape = SubResource( 7 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 28, 28 )
+current = true
+zoom = Vector2( 0.8, 0.8 )
+limit_left = -62
+limit_bottom = 3000000
+limit_smoothed = true
+smoothing_enabled = true
+drag_margin_left = 0.28
+drag_margin_top = 0.5
+drag_margin_right = 0.25
+drag_margin_bottom = 0.11
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="vidas_g" type="AnimatedSprite" parent="."]
+position = Vector2( 10, -86.25 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 5 )
+animation = "0"
+playing = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -12.5, -1.25 )
+polygon = PoolVector2Array( 33.75, 101.25, 17.5, 101.25, 12.5, 82.5, -13.75, 98.75, -21.25, 82.5, -15, 63.75, -22.5, 47.5, -21.25, 8.75, -15, -21.25, -1.25, -33.75, 7.5, -65, 46.25, -62.5, 51.25, -30, 53.75, -7.5, 51.25, 6.25, 53.75, 27.5, 51.25, 35, 42.5, 42.5, 40, 76.25 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+visible = false
+frames = SubResource( 8 )
+animation = "morto"
+
+[node name="Position2D" type="Position2D" parent="."]
+
+[node name="attackfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 18 )
+volume_db = -10.0
+max_distance = 2e+09
+
+[node name="jumpFx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 19 )
+volume_db = -18.0
+max_distance = 2e+10
+
+[node name="coinFx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 17 )
+volume_db = -7.866
+max_distance = 2e+11
+
+[node name="hurtFx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 20 )
+volume_db = -8.0
+max_distance = 2e+14
+
+[connection signal="area_entered" from="Sprite/Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="Sprite/espada" to="." method="_on_espada_area_entered"]
+[connection signal="area_entered" from="Sprite/espada2" to="." method="_on_espada_area_entered"]

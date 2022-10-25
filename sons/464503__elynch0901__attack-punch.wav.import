@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/464503__elynch0901__attack-punch.wav-66841510925bdc45f4f9389d82df7ebd.sample"
+
+[deps]
+
+source_file="res://sons/464503__elynch0901__attack-punch.wav"
+dest_files=[ "res://.import/464503__elynch0901__attack-punch.wav-66841510925bdc45f4f9389d82df7ebd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

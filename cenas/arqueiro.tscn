@@ -1,0 +1,161 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://scripts/arqueiro.gd" type="Script" id=1]
+[ext_resource path="res://recursos/Players/adventurer-bow-03.png" type="Texture" id=2]
+[ext_resource path="res://recursos/Players/adventurer-bow-02.png" type="Texture" id=3]
+[ext_resource path="res://recursos/Players/adventurer-bow-01.png" type="Texture" id=4]
+[ext_resource path="res://recursos/Players/adventurer-bow-00.png" type="Texture" id=5]
+[ext_resource path="res://recursos/Players/adventurer-bow-04.png" type="Texture" id=6]
+[ext_resource path="res://recursos/02.png" type="Texture" id=7]
+[ext_resource path="res://recursos/04.png" type="Texture" id=8]
+[ext_resource path="res://recursos/03.png" type="Texture" id=9]
+[ext_resource path="res://recursos/01.png" type="Texture" id=10]
+[ext_resource path="res://recursos/00.png" type="Texture" id=11]
+[ext_resource path="res://recursos/Players/adventurer-bow-06.png" type="Texture" id=12]
+[ext_resource path="res://recursos/Players/adventurer-walk-022.png" type="Texture" id=13]
+[ext_resource path="res://recursos/Players/adventurer-bow-jump-00.png" type="Texture" id=14]
+[ext_resource path="res://recursos/Players/adventurer-walk-011.png" type="Texture" id=15]
+[ext_resource path="res://recursos/Players/bah3.png" type="Texture" id=16]
+[ext_resource path="res://recursos/Players/adventurer-walk-0000.png" type="Texture" id=17]
+[ext_resource path="res://sons/341695__projectsu012__coins-1.wav" type="AudioStream" id=18]
+[ext_resource path="res://sons/464503__elynch0901__attack-punch.wav" type="AudioStream" id=19]
+[ext_resource path="res://sons/456373__felixyadomi__hop9.wav" type="AudioStream" id=20]
+[ext_resource path="res://sons/270326__littlerobotsoundfactory__hit-01.wav" type="AudioStream" id=21]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 12 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "disparo",
+"speed": 6.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 63.0
+height = 60.4445
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "0",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "2",
+"speed": 5.0
+} ]
+
+[node name="arqueiro" type="KinematicBody2D"]
+position = Vector2( 224, 480 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0.5, -2.59999 )
+scale = Vector2( 0.790625, 0.805063 )
+frames = SubResource( 2 )
+animation = "disparo"
+frame = 4
+playing = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Sprite"]
+position = Vector2( -3, 41 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
+position = Vector2( -0.333328, -4.74994 )
+shape = SubResource( 3 )
+
+[node name="vidas_a" type="AnimatedSprite" parent="."]
+position = Vector2( -16, -85 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 4 )
+animation = "0"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -160, -516 )
+polygon = PoolVector2Array( 191, 602, 189, 602, 162, 580, 148, 582, 124, 604, 120, 602, 125, 577, 114, 571, 122, 515, 139, 475, 177, 473, 190, 486, 188, 534, 195, 600 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 10, 124 )
+scale = Vector2( 0.3, 0.3 )
+current = true
+zoom = Vector2( 0.8, 0.8 )
+limit_left = -62
+limit_bottom = 1080
+limit_smoothed = true
+smoothing_enabled = true
+drag_margin_left = 0.26
+drag_margin_top = 0.31
+drag_margin_right = 0.25
+drag_margin_bottom = 0.24
+editor_draw_limits = true
+
+[node name="Position2D" type="Position2D" parent="."]
+
+[node name="shoot_point" type="Position2D" parent="."]
+position = Vector2( 65, 13 )
+
+[node name="jumpFx" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 0, 3.05176e-05 )
+stream = ExtResource( 20 )
+volume_db = -18.0
+max_distance = 9.22337e+18
+
+[node name="attackfx" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 0, 3.05176e-05 )
+stream = ExtResource( 19 )
+volume_db = -10.0
+max_distance = 2e+13
+
+[node name="coinFx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 18 )
+volume_db = -15.0
+max_distance = 2e+09
+
+[node name="hurtFx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 21 )
+volume_db = -20.0
+max_distance = 2e+12
+
+[connection signal="animation_finished" from="Sprite" to="." method="_on_Sprite_animation_finished"]
+[connection signal="area_entered" from="Sprite/Area2D" to="." method="_on_Area2D_area_entered"]

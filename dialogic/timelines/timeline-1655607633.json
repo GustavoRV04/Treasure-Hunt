@@ -1,0 +1,84 @@
+{
+	"events": [
+		{
+			"animation": "2-fade_in_up.gd",
+			"animation_length": 1,
+			"animation_wait": false,
+			"change_mirror_portrait": false,
+			"change_position": false,
+			"change_z_index": false,
+			"character": "character-1655607117.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1655607117.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Olá, jovem. Que bom que chegou. Nós temos um grande problema!\nFomos roubados! Levaram o artefato que protegia a aldeia contra os monstros.\nA coroa do grande mestre. Preciso que você a encontre!\nEu iria no seu lugar, mas sem o artefato a aldeia corre um risco muito alto de receber ataques de montros. Preciso estar aqui para proteger o povo de Saphira."
+		},
+		{
+			"character": "character-1655607117.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Posso contar com você?"
+		},
+		{
+			"choice": "É claro. Eu prometo não falhar!",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1655607117.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ótimo. Agora vá, jovem herói"
+		},
+		{
+			"choice": "Com certeza.",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1655607117.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Sabia que você não me desapontaria.\nO povo de Saphira conta com você!"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
+		},
+		{
+			"custom_slot": "",
+			"event_id": "dialogic_026",
+			"use_default_slot": true
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.2 - Dev",
+		"file": "timeline-1655607633.json",
+		"name": "Treasure_Hunt1"
+	}
+}

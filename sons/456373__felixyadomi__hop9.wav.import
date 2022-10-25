@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/456373__felixyadomi__hop9.wav-a50bd46fb2db48ce040428255f5c17a6.sample"
+
+[deps]
+
+source_file="res://sons/456373__felixyadomi__hop9.wav"
+dest_files=[ "res://.import/456373__felixyadomi__hop9.wav-a50bd46fb2db48ce040428255f5c17a6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
